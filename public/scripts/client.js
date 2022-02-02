@@ -33,7 +33,7 @@
 
 const renderTweets = function(tweetData) {
   tweetData.forEach((tweet) => {
-    $('main').append(createTweetElement(tweet));
+    $('#post-board').append(createTweetElement(tweet));
   })
 }
 
@@ -65,20 +65,14 @@ const createTweetElement = (tweet) => {
 
 $(document).ready(() => {
 
-
-
-
-
-
-
   $('#submit-form').submit(function(event) {
     event.preventDefault();
-
     if ($('#tweet-text').val().length === 0) {
       alert('Please Share Something!')
     } else if ($('#tweet-text').val().length > 140) {
       alert('Maybe you need to short it a little(under 140)')
     } else {
+      $('#post-board').empty();
       const newTweet = $(this).serialize();
       $.ajax('/tweets', { data: newTweet, method: 'POST' }).then(function() {
         console.log('successfully send:' + newTweet);
@@ -94,8 +88,6 @@ $(document).ready(() => {
       renderTweets(tweetData.reverse());
     })
   }
-
-
-
 }
 )
+
