@@ -73,20 +73,29 @@ $(document).ready(() => {
 
   $('#submit-form').submit(function(event) {
     event.preventDefault();
-    const newTweet = $(this).serialize();
-    $.ajax('/tweets', { data: newTweet, method: 'POST' }).then(function() {
-      console.log('successfully send:' + newTweet);
-    });
+
+    if ($('#tweet-text').val().length === 0) {
+      alert('Please Share Something!')
+    } else if ($('#tweet-text').val().length > 140) {
+      alert('Maybe you need to short it a little(under 140)')
+    } else {
+      const newTweet = $(this).serialize();
+      $.ajax('/tweets', { data: newTweet, method: 'POST' }).then(function() {
+        console.log('successfully send:' + newTweet);
+        loadTweets();
+      });
+      $('#tweet-text').val('');
+    }
+
   })
 
   const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' }).then(function(tweetData) {
-      console.log(tweetData);
-      renderTweets(tweetData);
+      renderTweets(tweetData.reverse());
     })
   }
 
-  loadTweets();
+
 
 }
 )
