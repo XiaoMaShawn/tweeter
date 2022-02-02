@@ -1,0 +1,52 @@
+.all-new-container {
+  margin-top: 20px;
+  border:2px solid;
+  /* height: 120px; */
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.all-new-container > header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.all-new-container article {
+  width: 100%;
+  height: 130px;
+  margin-top: 20px;
+  padding: 20px;
+  border-bottom: 2px solid;
+  
+}
+
+.all-new-container footer {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* .tweet-intraction > i:hover {
+  box-shadow:sandybrown;
+  color: red;
+} */
+
+.fl:hover {
+  box-shadow:red;
+  color: red;
+}
+.rt:hover {
+  box-shadow:red;
+  color: red;
+}
+.he:hover {
+  box-shadow:red;
+  color: red;
+}
+
+

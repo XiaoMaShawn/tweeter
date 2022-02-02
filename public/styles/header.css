@@ -1,0 +1,13 @@
+body > header {
+  /* position: absolute; */
+  height: 400px;
+  width: 100%;
+  background-color: sandybrown;
+  background-image: url("/images/black-thread-light.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+}
+
