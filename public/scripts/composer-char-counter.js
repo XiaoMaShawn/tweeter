@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  console.log('test the jQuery')
-
 
   $('#tweet-text').keyup(function() {
     let num = this.value.length;
@@ -14,7 +12,6 @@ $(document).ready(function() {
       return result;
     })
   })
-
 
 })
 

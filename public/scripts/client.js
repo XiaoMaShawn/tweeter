@@ -46,7 +46,7 @@ const createTweetElement = (tweet) => {
       <div>${tweet.user.handle}</div>
     </header>
 
-    <article>${tweet.content.text}</article>
+    <article>${escapeStr(tweet.content.text)}</article>
 
     <footer>
       <span>
@@ -63,14 +63,36 @@ const createTweetElement = (tweet) => {
   return result;
 }
 
+const escapeStr = function(str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 $(document).ready(() => {
+
 
   $('#submit-form').submit(function(event) {
     event.preventDefault();
-    if ($('#tweet-text').val().length === 0) {
-      alert('Please Share Something!')
+    $('#validation-message').empty();
+    if (!$('#tweet-text').val().length) {
+      const message1 = `
+      <p> 
+      <i class="fas fa-exclamation-triangle"></i>
+      Please Share Something!(can't be empty)</p>
+      `;
+      $('#validation-message').append(message1);
+      $('#validation-message').slideDown('slow');
     } else if ($('#tweet-text').val().length > 140) {
-      alert('Maybe you need to short it a little(under 140)')
+      const message2 = `
+      <p> 
+      <i class="fas fa-exclamation-triangle"></i>
+      Maybe you need to short it a little(under 140)
+      </p>
+      `;
+      $('#validation-message').append(message2);
+      $('#validation-message').slideDown('slow');
+
     } else {
       $('#post-board').empty();
       const newTweet = $(this).serialize();
