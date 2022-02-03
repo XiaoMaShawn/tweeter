@@ -6,8 +6,9 @@ To get this App, I used HTML, CSS, JS, jQuery, AJAX front-end skills, Node, and 
 
 
 ## Screen Shoot
-!['Here is the interface for desktop'](https://github.com/XiaoMaShawn/tweeter/blob/master/docs/desktopsize.png)
-!['Here is the normal view of my APP!'](https://github.com/XiaoMaShawn/tweeter/blob/master/docs/nomarlsize.png)
+!["Here is the interface for desktop"](https://github.com/XiaoMaShawn/tweeter/blob/master/docs/desktopsize.png)
+!["Here is the normal view of my APP!"](https://github.com/XiaoMaShawn/tweeter/blob/master/docs/nomarlsize.png)
+
 ## Getting Started
 
 1. Clone the repository onto your local device.
