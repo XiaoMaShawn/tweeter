@@ -1,7 +1,6 @@
 .all-new-container {
   margin-top: 20px;
   border:2px solid;
-  /* height: 120px; */
   padding: 15px;
   display: flex;
   flex-direction: column;

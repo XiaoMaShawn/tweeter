@@ -1,0 +1,18 @@
+/* breakpoint at 1024px at width */
+@media screen and (min-width:1024px) {
+  
+  body>header {
+    width:40%;
+    float: left;
+    margin-left: 5%;
+    margin-top: 15%;
+  }
+
+  main {
+    width: 50%;
+    float:right;
+    margin-top: 140px;
+    padding: 2%;
+  }
+
+}
